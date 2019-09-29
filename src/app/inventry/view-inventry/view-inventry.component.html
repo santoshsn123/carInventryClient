@@ -1,0 +1,52 @@
+<table class="table">
+  <tr>
+    <td>Model Name</td>
+    <td>{{ invent.modelName }}</td>
+  </tr>
+  <tr>
+    <td>Manufacturer</td>
+    <td>{{ invent.modelTitle }}</td>
+  </tr>
+  <tr>
+    <td>Note</td>
+    <td>{{ invent.note }}</td>
+  </tr>
+  <tr>
+    <td>Registration Number</td>
+    <td>{{ invent.regNumber }}</td>
+  </tr>
+  <tr>
+    <td>Year Created</td>
+    <td>{{ invent.year }}</td>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td>{{ invent.color }}</td>
+  </tr>
+  <tr>
+    <td>Image 1</td>
+    <td>
+      <img
+        src="{{ common.baseUrl + '../images/' + invent.image1 }}"
+        style="width: 200px;"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td>Image 2</td>
+    <td>
+      <img
+        src="{{ common.baseUrl + '../images/' + invent.image2 }}"
+        style="width: 200px;"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button class="btn btn-primary" (click)="deleteInventry()">
+        Mark it as sold
+      </button>
+    </td>
+  </tr>
+</table>

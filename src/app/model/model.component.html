@@ -1,0 +1,18 @@
+<a href="javascript:void(0);" [routerLink]="['add']">Add New</a>
+
+<table class="table">
+  <tr>
+    <td>#</td>
+    <td>Title</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let model of allModels; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ model.modelTitle }}</td>
+    <td>
+      <a href="javascript:void(0);" [routerLink]="['edit/' + model.id]">Edit</a>
+      /
+      <a href="javascripe:void(0);" (click)="deleteModel(model.id)">Delete</a>
+    </td>
+  </tr>
+</table>

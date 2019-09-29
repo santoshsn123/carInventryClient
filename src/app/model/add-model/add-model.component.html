@@ -1,0 +1,17 @@
+<h1>{{ fetchedData ? "Update" : "Add" }} Manufacturer</h1>
+
+<form [formGroup]="addModel" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Manufacturer Title</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Manufacturer Title"
+      formControlName="title"
+    />
+  </div>
+  <div *ngIf="submitted && f.title.errors" class="alert alert-danger">
+    <div *ngIf="f.title.errors.required">Please Enter Title!</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>

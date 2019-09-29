@@ -1,0 +1,41 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div class="container login-container">
+    <h1>Login Form</h1>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <label for="uname"><b>Username</b></label>
+    <input
+      type="text"
+      placeholder="Enter Username"
+      name="username"
+      formControlName="username"
+    />
+    <div></div>
+    <div *ngIf="submitted && f.username.errors" class="alert alert-danger">
+      <div *ngIf="f.username.errors.required">Please Enter Username!</div>
+    </div>
+
+    <label for="psw"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="password"
+      formControlName="password"
+    />
+    <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+      <div *ngIf="f.password.errors.required">Please Enter Password!</div>
+      <div *ngIf="f.password.errors.minlength">Length is too short!</div>
+    </div>
+    <button type="submit">
+      <img
+        src="assets/img/loading.gif"
+        *ngIf="loading"
+        class="loading-class"
+      />Login
+    </button>
+    <label>
+      <!-- <input type="checkbox" checked="checked" name="remember" /> Remember me -->
+    </label>
+  </div>
+</form>

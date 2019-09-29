@@ -1,0 +1,106 @@
+<h1>Inventry Management</h1>
+
+<form [formGroup]="inventryForm" (ngSubmit)="onSubmit()">
+  <div class="row form-group">
+    <div class="col">
+      <label for="manufacturer">Manufaturer</label>
+      <select
+        class="form-control"
+        id="manufacturer"
+        formControlName="manufacturer"
+        name="manufacturer"
+      >
+        <option
+          *ngFor="let model of allModels; let i = index"
+          value="{{ model.id }}"
+          >{{ model.modelTitle }}</option
+        >
+      </select>
+    </div>
+    <div class="col">
+      <label for="modelName">Model Name</label>
+      <input
+        type="text"
+        id="modelName"
+        class="form-control"
+        placeholder="Enter Manufacturer Title"
+        formControlName="modelName"
+        name="modelName"
+      />
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <label for="color">Color</label>
+      <input
+        type="text"
+        id="color"
+        class="form-control"
+        placeholder="Enter Color"
+        formControlName="color"
+        name="color"
+      />
+    </div>
+    <div class="col">
+      <label for="manYear">Manufacturer Year</label>
+      <input
+        type="text"
+        id="manYear"
+        class="form-control"
+        placeholder="Enter Manufacturer Year"
+        formControlName="year"
+        name="year"
+      />
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <label for="regNo">Registration Number</label>
+      <input
+        type="text"
+        id="regNo"
+        class="form-control"
+        placeholder="Enter Registration Number"
+        formControlName="registrationNo"
+        name="registrationNo"
+      />
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <label for="notes">Note</label>
+      <textarea
+        type="text"
+        id="notes"
+        class="form-control"
+        placeholder="Some Notes"
+        formControlName="note"
+        name="note"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <label for="image">Image 1</label> <br />
+      <input
+        type="file"
+        name="image1"
+        id="image"
+        (change)="changeImage('image1', $event.target.files)"
+      />
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <label for="image2">Image 1</label> <br />
+      <input
+        type="file"
+        name="image2"
+        id="image2"
+        (change)="changeImage('image2', $event.target.files)"
+      />
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
